@@ -119,30 +119,20 @@ class PlanLoader:
         return self.plan_data
 
 
-# if __name__ == "__main__":
-#     path = "Z:\Research\RADONC_S\Abishek\BILLER^LINDA R19431208.20230726.101950"
-#     name = "BILLER^LINDA R_patient.xml"
-#     plan_uid = "1.2.826.0.1.3680043.2.200.868841086.986.80371.127"
-#
-#     # Example usage
-#     # loader = PlanLoader("/path/to/xml", "patient.xml", "plan_uid")
-#     # plan_data = loader.load_plan()
-#     # print(plan_data)
-#
-#     try:
-#         loader = PlanLoader(path, name, plan_uid)
-#         plan_data = loader.load_plan()
-#         print (plan_data)
-#         # print(f"Patient Name: {plan_data.patientName}")
-#         # print(f"Plan Label: {plan_data.planLabel}")
-#         # print(f"Sinogram Data: {plan_data.sinogram[:10] if plan_data.sinogram else None}")
-#     except Exception as e:
-#         print(f"Error: {str(e)}")
-#
-#     # try:
-#     #     plan_data = load_plan(path, name, plan_uid)
-#     #     print(f"Patient Name: {plan_data.patientName}")
-#     #     print(f"Plan Label: {plan_data.planLabel}")
-#     #     print(f"Sinogram Data: {plan_data.sinogram[:10] if plan_data.sinogram else None}")
-#     # except Exception as e:
-#     #     print(f"Error: {str(e)}")
+if __name__ == "__main__":
+    path = "Z:\Research\RADONC_S\Abishek\BILLER^LINDA R19431208.20230726.101950"
+    name = "BILLER^LINDA R_patient.xml"
+    plan_uid = "1.2.826.0.1.3680043.2.200.868841086.986.80371.127"
+
+
+
+    try:
+        loader = PlanLoader(path, name, plan_uid)
+        plan_data = loader.load_plan()
+        print (plan_data.keys())
+        print("Patient Name:" , plan_data['patient_name'])
+        # print(f"Plan Label: {plan_data.planLabel}")
+        # print(f"Sinogram Data: {plan_data.sinogram[:10] if plan_data.sinogram else None}")
+    except Exception as e:
+        print(f"Error: {str(e)}")
+
